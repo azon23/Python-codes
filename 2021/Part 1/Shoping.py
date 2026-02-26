@@ -4,7 +4,7 @@ prix = {
     "banane" : 150,
     "poire" : 45,
     "sacoche" : 200
-    }
+}
 
 print("\nArticles disponibles:")
 for keys in prix.keys():
