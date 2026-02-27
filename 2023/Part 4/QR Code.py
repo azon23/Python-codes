@@ -14,4 +14,4 @@ img = qr.make_image(fill_color = 'black',
 abs_path = os.path.abspath(__file__)
 rel_path = os.path.dirname(abs_path)
 
-img.save(fr"{rel_path}\MyQRCode.png")
+img.save(fr"{rel_path}\MyQRCode.png") # Dans le même dossier que le fichier Python
