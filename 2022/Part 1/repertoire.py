@@ -2,33 +2,12 @@ from string import whitespace
 from pyperclip import copy
 
 repertoire = [
-'abdou 77969976',
- 'abdoulaye coulibaly 82829966',
- 'abdoulaye sow 72122103',
- 'anika 83124256',
- 'assetou 72927272',
- 'barber 76978563',
- 'barry 98512828',
- 'ben 66747373',
- 'diakité 77076060',
- 'gnagna 76769300',
- 'habib 90153293',
- 'jeanne 89557966',
- 'kondo 93539684',
- 'krish 63414237',
- 'magnol 90303400',
- 'mahamadou cisse 94645700',
- 'maman 83849835 / 99937926',
- 'ousmane 93753685',
- 'papa 79205938 / 69013739',
- 'prince 82883705',
- 'rokiatou 70629724',
- 'sambou 75155034',
- 'selima 94892870',
- 'simone 91781609',
- 'souad 91344370 / 60560376',
- 'thioune 70703223',
- 'zani 94314127'
+    "Jean Dupont 060102XXXX",
+    "Marie Lefevre 061122XXXX",
+    "Lucas Martin 062233XXXX",
+    "Emma Bernard 063344XXXX",
+    "Noah Petit 064455XXXX",
+    "Lina Moreau 065566XXXX"
 ]
 
 

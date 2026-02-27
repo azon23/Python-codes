@@ -14,7 +14,7 @@ while True:
         urls.append(user_input)
 
 # Configurez le dossier de téléchargement
-download_directory = r"C:\Users\HP\Downloads"
+download_directory = r"C:\Users\Junky\Downloads"
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_experimental_option("prefs", {
@@ -25,7 +25,7 @@ try:
     for i in range(0, len(urls)):
 
         # variable qui declenche le driver et ouvrir la page web
-        driver = webdriver.Chrome(executable_path=r'C:\Users\HP\Documents\Files\scripts\Test ressources\chromedriver.exe', options=chrome_options)
+        driver = webdriver.Chrome()
         driver.get(r"https://notube.io/fr/youtube-app-v102")
         # driver.maximize_window()
         

@@ -1,0 +1,4 @@
+logs/
+temp/
+venv/
+__pycache__/

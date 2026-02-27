@@ -5,10 +5,10 @@ setup(
     name = "Tic tac toe 3.0",
     version = "1.3",
     description = "Tic tac toe game with AI and player mode. Made by Junky",
-    executables = [Executable(r"C:\Users\HP\Documents\Files\scripts\Python codes\tic tac toe UI v2.py")]
+    executables = [Executable(r"path\to\the\python\file\to\compile\in\exe")]
 )
 
 # naviguer jusqu'au répertoire et executer la ligne suivante :
 # python script_to_exe.py build
 # ou taper directement:
-# python C:\Users\HP\Documents\Files\scripts\Python codes\script_to_exe.py build
+# python absolute\path\Part 3\script_to_exe.py build

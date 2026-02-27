@@ -15,7 +15,7 @@ def ouvrir():
     root = Tk()
     root.title('Note Pro Max')
     root.minsize(480, 360)
-    root.iconbitmap(fr"{rel_path}\ressource\bloc-note.ico")
+    root.iconbitmap(fr"{rel_path}\Ressources\bloc-note.ico")
     root.state('zoomed')
     #root.minsize(weight, height)
     root.config(background=left_bg)
@@ -27,7 +27,7 @@ def ouvrir():
     # Fonction - Recherche des fichiers
     def scan():
         files = []
-        path = rel_path + "\\ressource\\"
+        path = rel_path + "\\Ressources\\"
         for file in os.listdir(path):
             if file.endswith(".txt"):
                 files.append(file)
@@ -37,7 +37,7 @@ def ouvrir():
     # Fonction - Rafraichissement de la page
     def refresh(files):
         counter = 1
-        path = rel_path + "\\ressource\\"
+        path = rel_path + "\\Ressources\\"
 
         globals()['all_previews_frame'].destroy()
         
@@ -127,7 +127,7 @@ def ouvrir():
     def add_file():
         def submit(event=None):
             n = entry.get()
-            myFile = open(rel_path + "\\ressource\\" + n + ".txt", "w+")
+            myFile = open(rel_path + "\\Ressources\\" + n + ".txt", "w+")
             myFile.close()
             roots.destroy()
             refresh(scan())
@@ -136,7 +136,7 @@ def ouvrir():
         roots = Tk()
         roots.title("Nom du fichier")
         roots.geometry("290x75")
-        roots.iconbitmap(fr"{rel_path}\ressource\bloc-note.ico")
+        roots.iconbitmap(fr"{rel_path}\Ressources\bloc-note.ico")
         roots.bind("<Return>", submit)
         roots.focus_force()
 
@@ -158,13 +158,13 @@ def ouvrir():
     search_bar = Entry(top_frame, font=('Roboto', 15))
     search_bar.pack(fill='both', side='left', expand=YES)
 
-    signe_plus = PhotoImage(file=fr"{rel_path}\ressource\plus.png")
+    signe_plus = PhotoImage(file=fr"{rel_path}\Ressources\plus.png")
     new = Button(top_frame, text='+', font=('Arial Black', 15, 'bold'), background=box_bg, image=signe_plus, command=add_file)
     new.pack(side='right')
 
     def search(e):
         notetext_dict = {}
-        path = rel_path + "\\ressource\\"
+        path = rel_path + "\\Ressources\\"
         for file in os.listdir(path):
             if file.endswith(".txt"):
                 with open(path+file, 'r', encoding='ansi') as note:
@@ -184,13 +184,13 @@ def ouvrir():
             root1 = Tk()
             root1.withdraw()
             root1.minsize(480, 360)
-            root1.iconbitmap(fr"{rel_path}\ressource\bloc-note.ico")
+            root1.iconbitmap(fr"{rel_path}\Ressources\bloc-note.ico")
         
             print("Aucun résultat trouvé.")
             messagebox.showinfo("Message", "Aucun résultat.")                
 
 
-    loupe = PhotoImage(file=fr"{rel_path}\ressource\loupe.png")
+    loupe = PhotoImage(file=fr"{rel_path}\Ressources\loupe.png")
     search_button = Button(top_frame, text='+', font=('Arial Black', 15, 'bold'), background=box_bg, image=loupe, command=search)
     search_button.pack(side='right', padx=5)
     root.bind('<Return>', search)
@@ -218,7 +218,7 @@ def ouvrir():
             root1 = Tk()
             root1.withdraw()
             root1.minsize(480, 360)
-            root1.iconbitmap(fr"{rel_path}\ressource\bloc-note.ico")
+            root1.iconbitmap(fr"{rel_path}\Ressources\bloc-note.ico")
             
             messagebox.showinfo("Fichier supprimé", "Ce fichier a été supprimmé avec succès")
             refresh(scan())
@@ -227,7 +227,7 @@ def ouvrir():
             root2 = Tk()
             root2.withdraw()
             root2.minsize(480, 360)
-            root2.iconbitmap(fr"{rel_path}\ressource\bloc-note.ico")
+            root2.iconbitmap(fr"{rel_path}\Ressources\bloc-note.ico")
             messagebox.showinfo("Fichier supprimé", "Ce fichier n'existe pas. Il n'a donc pas pu être supprimmé")
         
 
@@ -237,11 +237,11 @@ def ouvrir():
     root_time = Label(frame_right_up1, font=('Courier', 16), text="", bg=right_bg, fg='Black')
     root_time.pack(side='right', pady=20)
 
-    border_radius = PhotoImage(file=fr"{rel_path}\ressource\shape.png")
+    border_radius = PhotoImage(file=fr"{rel_path}\Ressources\shape.png")
     supprimer = Button(frame_right_up2, text='  Delete  ', font=('Roboto', 14, 'bold'), fg='white', bg=right_bg, activebackground=right_bg, borderwidth=0, image=border_radius, command=delete)
     supprimer.pack(side='right', padx=5, pady=20)
 
-    line = PhotoImage(file=fr"{rel_path}\ressource\separator.png")
+    line = PhotoImage(file=fr"{rel_path}\Ressources\separator.png")
     separator = Button(frame_right_down, image=line, bg=right_bg, height=1, anchor='center', borderwidth=0)
     separator.pack(side='top', fill='x', padx=10, pady=20)
 

@@ -7,6 +7,7 @@ abs_path = os.path.abspath(__file__)
 rel_path = os.path.dirname(abs_path)
 bg_color = '#202120'
 font = ('Calibri', 12)
+folder = input("Entrez le chemin du dossier : ").replace('"', '') + "\\"
 
 # config
 root = Tk()
@@ -102,13 +103,7 @@ search_frame.pack(pady=10)
 frame = Frame(root, bg=bg_color)
 frame.pack(expand=YES, anchor="nw", padx=10, pady=20)
 
-folder = r"C:\Users\HP\Pictures\Fonds d'écrans".replace('"', '')+"\\"
 preview(folder=folder)
-
-menu_bar = Menu()
-menu_bar.add_command(label='Pictures folder', command=lambda: preview(r"C:\Users\HP\Pictures\\"))
-root.config(menu=menu_bar)
-
 
 
 root.mainloop()

@@ -1,7 +1,10 @@
 from string import ascii_letters, digits
 from random import randint
-import time
-import sys
+import time, sys, os
+
+abs_path = os.path.abspath(__file__)
+rel_path = os.path.dirname(abs_path)
+score_file = fr"{rel_path}\Ressources\records.txt"
 
 separator = '\n--------------------------------------------'
 
@@ -12,7 +15,7 @@ def hidden_number_game():
         index_dict = {} # dictionnaire pour faire correspondre chaque ligne de records.txt avec l'index de cette ligne
         chars = ascii_letters + digits    # ensemble des lettres (majuscules et minuscules) et des chiffres
 
-        with open(r"C:\Users\HP\Documents\Files\scripts\Test ressources\records.txt", "r") as file:
+        with open(score_file, "r") as file:
             content = file.readlines()  # récupère et stocke chaque ligne du fichier dans la variable "content" sous forme de liste
             for element in chars:
                 for line in content:    # pour chaque line du fichier
@@ -63,7 +66,7 @@ def hidden_number_game():
                     if answer == nombreMystere:
                         print(f"\nFélicitation!!! Vous avez trouvé le nombre mystère en {attemps} essaies.")
                         # enregistre le scrore dans un fichier txt
-                        with open(r"C:\Users\HP\Documents\Files\scripts\Test ressources\records.txt", 'r+') as record:
+                        with open(score_file, 'r+') as record:
                             content = record.read()
                             record.seek(0)
                             record.write(f"{username}\t=>\t{attemps} tentatives\t=>\t{nowdate}\n\n" + content)
@@ -108,7 +111,7 @@ def hidden_number_game():
             elif choice == 'l': # affiche les 5 dernières parties
                 print("-------------------------------------------")
                 print("Voici les 5 dernières parties gagnées:\n")
-                with open(r"C:\Users\HP\Documents\Files\scripts\Test ressources\records.txt", 'r') as record:
+                with open(score_file, 'r') as record:
                     for x in record:
                         if x.startswith("\n"):
                             pass
@@ -122,7 +125,7 @@ def hidden_number_game():
                 print("-------------------------------------------")
                 print("Voici la liste de toutes les parties gagnées:\n")
                 myList = []
-                with open(r"C:\Users\HP\Documents\Files\scripts\Test ressources\records.txt", 'r') as record:
+                with open(score_file, 'r') as record:
                     for x in record:
                         myList.append(x)
                     

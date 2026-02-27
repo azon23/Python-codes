@@ -1,0 +1,8 @@
+Golden States Warriors = Stephen Curry, Jordan Poole
+Los Angeles Lakers = LeBron James, Russell Westbrook, Antony Davis
+Brooklyn Nets = Kyrie Irving, Kevin Durant, Nic Claxton
+Charlotte Hornets = LaMelo Ball
+Memphis Grizzlies = Ja Morant
+Boston Celtics = Jason Tatum
+Atlanta Hawks = Trae Young
+Portland Trail Blazzers = Damian Lillard

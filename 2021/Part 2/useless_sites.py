@@ -128,3 +128,5 @@ def useless_sites():
 		else:
 			print('\nNon pris en charge. Entrez un numéro correct !')
 			print('\n--------------------------------------------')
+
+useless_sites(1)

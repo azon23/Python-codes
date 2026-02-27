@@ -1,18 +1,9 @@
-# Exemple d'images
-'''
-"C:\\Users\\HP\\Documents\\Files\\scripts\\Test ressources\\donald.jpg"
-"C:\\Users\\HP\\Documents\\Files\\scripts\\Test ressources\\desert_portal.png"
-"C:\\Users\\HP\\Documents\\Files\\scripts\\Test ressources\\pomme.jpg"
-"C:\\Users\\HP\\Documents\\Files\\scripts\\Test ressources\\thinking man.jpg"
-'''
-
 from PIL import Image
 import sys
+import os
 
 separator = '\n--------------------------------------------'
-def Image_effect():
-    path = input("\nCHEMIN DE L'IMAGE: ").replace('"', '').replace("'", "")
-
+def Image_effect(path):
     class modifs:
         def purple():
             img = Image.open(fr"{path}")
@@ -81,40 +72,46 @@ def Image_effect():
 
     print("\nEntrez le numéro du filtre à appliquer\n1 : Teinte de bleu\n2 : Teinte de violet\n3 : Noir & Blanc\n4 : Négatif\n5 : Effet glitch")
     print("\nAutres commandes:\n- A : Affiche l'image original\n- C : Changer d'image\n- exit, quit ou E : Fermer le programme")
-    while True:
-        if f"{path}" == "exit" or f"{path}" == "quit":
-            break
+    if f"{path}" == "exit" or f"{path}" == "quit":
+        return
 
-        try:
-            user_input = input("\nNuméro de filtre: ")
-            if user_input == "1":
-                modifs.blue()
-                print(separator)
-            elif user_input == "2":
-                modifs.purple()
-                print(separator)
-            elif user_input == "3":
-                modifs.greyscale()
-                print(separator)
-            elif user_input == "4":
-                modifs.negatif()
-                print(separator)
-            elif user_input == "5":
-                modifs.glitch()
-                print(separator)
-            elif user_input == "A" or user_input == "a":
-                img = Image.open(fr"{path}")
-                img.show()
-                print(separator)
-            elif user_input == "C" or user_input == "c":
-                path = input("\nEntrez le chemin du fichier: ").replace('"', '').replace("'", "")
-            elif user_input == "exit" or user_input == "quit" or user_input == "E" or user_input == "e":
-                break
-            else:
-                print("\nNon pris en charge. Entrez un numéro correct !")
-                print(separator)
-                continue
-        except Exception:
-            print("\n\t\t***\nL'image choisi ne peut pas être utilisé.\nVeuillez choisir une autre image...\n\t\t***".upper())
+    try:
+        user_input = input("\nNuméro de filtre: ")
+        if user_input == "1":
+            modifs.blue()
             print(separator)
-            Image_effect()
+        elif user_input == "2":
+            modifs.purple()
+            print(separator)
+        elif user_input == "3":
+            modifs.greyscale()
+            print(separator)
+        elif user_input == "4":
+            modifs.negatif()
+            print(separator)
+        elif user_input == "5":
+            modifs.glitch()
+            print(separator)
+        elif user_input == "A" or user_input == "a":
+            img = Image.open(fr"{path}")
+            img.show()
+            print(separator)
+        elif user_input == "exit" or user_input == "quit" or user_input == "E" or user_input == "e":
+            return
+        else:
+            print("\nNon pris en charge. Entrez un numéro correct !")
+            print(separator)
+            return
+    except Exception:
+        print("\n\t\t***\nL'image choisi ne peut pas être utilisé.\nVeuillez choisir une autre image...\n\t\t***".upper())
+        print(separator)
+
+
+# Exemples
+abs_path = os.path.abspath(__file__)
+rel_path = os.path.dirname(abs_path)
+
+Image_effect(fr"{rel_path}\Ressources\desert_portal.png")
+# Image_effect(fr"{rel_path}\Ressources\donald.jpg")
+# Image_effect(fr"{rel_path}\Ressources\pomme.jpg")
+# Image_effect(fr"{rel_path}\Ressources\thinking man.jpg")

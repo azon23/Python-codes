@@ -1,7 +1,10 @@
 from time import sleep
+import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+abs_path = os.path.abspath(__file__)
+rel_path = os.path.dirname(abs_path)
 
 def routeur():
     try:
@@ -9,7 +12,7 @@ def routeur():
         Redémarre le routeur wifi sur un réseau personnel
         '''
         # variable qui declenche le driver et ouvrir la page web
-        driver = webdriver.Chrome(executable_path="C:\\Users\\HP\\Documents\\Files\\scripts\\Test ressources\\chromedriver.exe")
+        driver = webdriver.Chrome()
         driver.maximize_window()
         driver.get("http://192.168.1.1")
 

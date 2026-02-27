@@ -46,7 +46,7 @@ def Memoring():
 
 
 """ 
-Phrase mnémotechnique :
+MA phrase mnémotechnique :
 3.14 15; neuf vins suisse; 5 35; 89 sceptre neufs très détruit; oui car si deux suisses grattent 3 truites; 3 des 7 nains 
 3.14 15   9    2      6    5 35  89   7       9    3    2  3     8   4  6   2      6       4     3  3 8     3  2  7   9
  """

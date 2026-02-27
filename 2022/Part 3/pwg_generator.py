@@ -1,7 +1,10 @@
-import string
+import string, os
 from pyperclip import copy
 from random import randint, choice
 from tkinter import *
+
+abs_path = os.path.abspath(__file__)
+rel_path = os.path.dirname(abs_path)
 
 def pwd_generator():
     punctuation = r"""-._#"""
@@ -19,7 +22,6 @@ def pwd_generator():
     # fenetre
     win = Tk()
     win.title('Password generator')
-    win.iconbitmap(r"C:\Users\HP\Documents\Files\scripts\Test ressources\ico_bitmap\cat.ico")
     win.minsize(900, 300)
     win.config(background='#4682B4')
 
@@ -39,7 +41,7 @@ def pwd_generator():
     # image à gauche de la frame principale
     w = 300
     h = 300
-    image = PhotoImage(file="C:\\Users\\HP\\Documents\\Files\scripts\\Test ressources\\password.png").subsample(2)
+    image = PhotoImage(file=fr"{rel_path}\Ressources\password.png").subsample(2)
     canvas = Canvas(frame, width=w, height=h, bg='#4682B4', bd=0, highlightthickness=0)
     canvas.create_image(w/2, h/2, image=image)
     canvas.grid(row=0, column=0, sticky=W)

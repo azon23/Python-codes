@@ -17,7 +17,7 @@ def scrape(url):
     return links
 
 
-website = str(input("Entrez l'url du site web : "))
+website = "https://www.w3schools.com/python/default.asp"  # Example
 index_dict = {}
 index = 0
 for char in website:
@@ -41,7 +41,7 @@ print("Il y a", len(all_links), "pages à télécharger\n")
 # Téléchargement des pages
 downloaded = 0
 try:
-    driver = webdriver.Chrome(executable_path='C:\\Users\\HP\\Documents\\Files\\scripts\\Test ressources\\chromedriver.exe')
+    driver = webdriver.Chrome()
     driver.get("https://webtopdf.com/")
     driver.maximize_window()
 

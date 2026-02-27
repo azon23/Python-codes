@@ -67,7 +67,7 @@ bg_color = '#251b3c'
 # config
 root = Tk()
 root.title('Convertisseur binaire')
-#root.iconbitmap(fr"{rel_path}\pyramid.ico")
+root.iconbitmap(fr"{rel_path}\pyramid.ico")
 root.state('zoomed')
 root.minsize(707, 450)
 root.config(background=bg_color)
